@@ -565,7 +565,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
 
 <!-- ============ HERO ============ -->
 <section class="hero dark grain" id="top">
-  <div class="hero-img" aria-hidden="true"><video autoplay loop muted playsinline preload="none" id="heroVid"></video></div>
+  <div class="hero-img" aria-hidden="true"><video autoplay loop muted playsinline src="hero.mp4"></video></div>
   <div class="wrap" style="position:relative;z-index:1">
     <p class="eyebrow">Fieldhouse Athletic Club — Austin, TX &middot; Est. 2019</p>
     <h1 class="display">The gym that<br>actually coaches<br><span class="outline">you.</span></h1>
@@ -1416,8 +1416,6 @@ function dismissSplash(){
   setTimeout(()=>{
     splash.classList.add('done');
     document.querySelector('.hero').classList.add('loaded');
-    const hv=document.getElementById('heroVid');
-    if(hv&&!hv.src){hv.src='hero.mp4';hv.play().catch(()=>{})}
   },600);
 }
 
