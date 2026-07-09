@@ -1523,8 +1523,12 @@ document.querySelectorAll('.tt-class').forEach(cl=>{
     const meta=cl.querySelector('.tt-class-meta').textContent;
     const parts=meta.split(' · ');
     const type=[...cl.classList].find(c=>['strength','conditioning','lunch','foundations'].includes(c))||'';
-    const day=cl.closest('.tt-day').dataset.day;
-    const time=cl.closest('.tt-slot').parentElement.parentElement.querySelector('.tt-times').children[[...cl.closest('.tt-slots').children].indexOf(cl.closest('.tt-slot'))].textContent;
+    const dayEl=cl.closest('.tt-day');
+    const day=dayEl.dataset.day;
+    const slot=cl.closest('.tt-slot');
+    const slotIdx=[...dayEl.querySelector('.tt-slots').children].indexOf(slot);
+    const timeEl=dayEl.querySelector('.tt-times').children[slotIdx];
+    const time=timeEl?timeEl.textContent:'';
 
     bkTitle.textContent=name;
     bkBadge.textContent=type;
