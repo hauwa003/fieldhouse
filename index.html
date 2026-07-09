@@ -6,8 +6,9 @@
 <title>Fieldhouse Athletic Club — Train Like It Matters</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/lenis@1/dist/lenis.min.js" defer></script>
 <style>
 :root{
   --ink:#131312;
@@ -535,7 +536,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
   <div class="splash-inner">
     <span class="splash-left">Field</span>
     <div class="splash-video">
-      <video autoplay loop muted playsinline src="hero.mp4"></video>
+      <video autoplay loop muted playsinline src="hero.mp4" preload="auto"></video>
     </div>
     <span class="splash-right">house<span class="splash-dot">.</span></span>
   </div>
@@ -564,7 +565,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
 
 <!-- ============ HERO ============ -->
 <section class="hero dark grain" id="top">
-  <div class="hero-img" aria-hidden="true"><video autoplay loop muted playsinline src="hero.mp4"></video></div>
+  <div class="hero-img" aria-hidden="true"><video autoplay loop muted playsinline preload="none" id="heroVid"></video></div>
   <div class="wrap" style="position:relative;z-index:1">
     <p class="eyebrow">Fieldhouse Athletic Club — Austin, TX &middot; Est. 2019</p>
     <h1 class="display">The gym that<br>actually coaches<br><span class="outline">you.</span></h1>
@@ -575,7 +576,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
           <a class="btn btn-volt" href="#start">Start your free week <span class="arr">&rarr;</span></a>
           <a class="btn btn-ghost" href="#schedule">What&rsquo;s on today</a>
         </div>
-        <div class="trust"><span><b>4.9&#9733;</b> from 312 Google reviews &nbsp;&middot;&nbsp; 400+ active members</span><div class="avatars"><img src="https://i.pravatar.cc/80?img=1" alt=""><img src="https://i.pravatar.cc/80?img=5" alt=""><img src="https://i.pravatar.cc/80?img=12" alt=""><img src="https://i.pravatar.cc/80?img=32" alt=""><img src="https://i.pravatar.cc/80?img=47" alt=""></div></div>
+        <div class="trust"><span><b>4.9&#9733;</b> from 312 Google reviews &nbsp;&middot;&nbsp; 400+ active members</span><div class="avatars"><img src="https://i.pravatar.cc/40?img=1" alt=""><img src="https://i.pravatar.cc/40?img=5" alt=""><img src="https://i.pravatar.cc/40?img=12" alt=""><img src="https://i.pravatar.cc/40?img=32" alt=""><img src="https://i.pravatar.cc/40?img=47" alt=""></div></div>
       </div>
       <div class="hero-meta">
         OPEN 5AM &mdash; 11PM DAILY<br>
@@ -634,7 +635,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
 
 <!-- ============ IMAGE BREAK 1 ============ -->
 <div class="img-break" role="img" aria-label="Member training under coach supervision">
-  <img class="duo" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1800&auto=format&fit=crop" alt="" loading="lazy" onerror="this.style.display='none'">
+  <img class="duo" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=70&w=1000&auto=format&fit=crop" alt="" loading="lazy" onerror="this.style.display='none'">
   <span class="img-cap">6pm on a Tuesday &mdash; plenty of space</span>
 </div>
 
@@ -647,7 +648,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
       <div class="carousel-viewport">
         <div class="carousel-track" id="progCarousel">
           <div class="prog" data-i="0">
-            <div class="prog-img"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80" alt="Open gym floor" loading="lazy"></div>
+            <div class="prog-img"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=70&auto=format" alt="Open gym floor" loading="lazy" decoding="async"></div>
             <div class="prog-body">
               <span class="idx">01 &mdash; Anytime</span>
               <h3>Open Gym</h3>
@@ -656,7 +657,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
             </div>
           </div>
           <div class="prog" data-i="1">
-            <div class="prog-img"><img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80" alt="Group fitness class" loading="lazy"></div>
+            <div class="prog-img"><img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&q=70&auto=format" alt="Group fitness class" loading="lazy" decoding="async"></div>
             <div class="prog-body">
               <span class="idx">02 &mdash; 26 classes / week</span>
               <h3>Group Classes</h3>
@@ -665,7 +666,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
             </div>
           </div>
           <div class="prog" data-i="2">
-            <div class="prog-img"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="Personal training session" loading="lazy"></div>
+            <div class="prog-img"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=70&auto=format" alt="Personal training session" loading="lazy" decoding="async"></div>
             <div class="prog-body">
               <span class="idx">03 &mdash; 1-on-1</span>
               <h3>Personal Training</h3>
@@ -674,7 +675,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
             </div>
           </div>
           <div class="prog" data-i="3">
-            <div class="prog-img"><img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80" alt="Foundations coaching" loading="lazy"></div>
+            <div class="prog-img"><img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&q=70&auto=format" alt="Foundations coaching" loading="lazy" decoding="async"></div>
             <div class="prog-body">
               <span class="idx">04 &mdash; 4 weeks</span>
               <h3>Foundations</h3>
@@ -711,7 +712,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
       <div class="ba-grid">
 
         <div class="ba">
-          <div class="ba-img"><img src="1.webp" alt="Transformation 1" loading="lazy"></div>
+          <div class="ba-img"><img src="1.webp" alt="Transformation 1" loading="lazy" decoding="async"></div>
           <div class="ba-info">
             <h4>Maria S.</h4>
             <span class="ba-time">6 months</span>
@@ -720,7 +721,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
         </div>
 
         <div class="ba">
-          <div class="ba-img"><img src="2.webp" alt="Transformation 2" loading="lazy"></div>
+          <div class="ba-img"><img src="2.webp" alt="Transformation 2" loading="lazy" decoding="async"></div>
           <div class="ba-info">
             <h4>Diane W.</h4>
             <span class="ba-time">8 months</span>
@@ -729,7 +730,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
         </div>
 
         <div class="ba">
-          <div class="ba-img"><img src="3.webp" alt="Transformation 3" loading="lazy"></div>
+          <div class="ba-img"><img src="3.webp" alt="Transformation 3" loading="lazy" decoding="async"></div>
           <div class="ba-info">
             <h4>Keisha R.</h4>
             <span class="ba-time">5 months</span>
@@ -738,7 +739,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
         </div>
 
         <div class="ba">
-          <div class="ba-img"><img src="4.webp" alt="Transformation 4" loading="lazy"></div>
+          <div class="ba-img"><img src="4.webp" alt="Transformation 4" loading="lazy" decoding="async"></div>
           <div class="ba-info">
             <h4>Lauren T.</h4>
             <span class="ba-time">10 months</span>
@@ -747,7 +748,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
         </div>
 
         <div class="ba">
-          <div class="ba-img"><img src="5.webp" alt="Transformation 5" loading="lazy"></div>
+          <div class="ba-img"><img src="5.webp" alt="Transformation 5" loading="lazy" decoding="async"></div>
           <div class="ba-info">
             <h4>Sofia M.</h4>
             <span class="ba-time">4 months</span>
@@ -756,7 +757,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
         </div>
 
         <div class="ba">
-          <div class="ba-img"><img src="6.webp" alt="Transformation 6" loading="lazy"></div>
+          <div class="ba-img"><img src="6.webp" alt="Transformation 6" loading="lazy" decoding="async"></div>
           <div class="ba-info">
             <h4>Jessica L.</h4>
             <span class="ba-time">7 months</span>
@@ -765,7 +766,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
         </div>
 
         <div class="ba">
-          <div class="ba-img"><img src="7.webp" alt="Transformation 7" loading="lazy"></div>
+          <div class="ba-img"><img src="7.webp" alt="Transformation 7" loading="lazy" decoding="async"></div>
           <div class="ba-info">
             <h4>Marcus D.</h4>
             <span class="ba-time">6 months</span>
@@ -774,13 +775,13 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
         </div>
 
         <!-- duplicate for seamless loop -->
-        <div class="ba"><div class="ba-img"><img src="1.webp" alt="" loading="lazy"></div><div class="ba-info"><h4>Maria S.</h4><span class="ba-time">6 months</span><p>Lost 28 lb. Now trains four days a week.</p></div></div>
-        <div class="ba"><div class="ba-img"><img src="2.webp" alt="" loading="lazy"></div><div class="ba-info"><h4>Diane W.</h4><span class="ba-time">8 months</span><p>Started at 58. Stronger than she&rsquo;s been in 20 years.</p></div></div>
-        <div class="ba"><div class="ba-img"><img src="3.webp" alt="" loading="lazy"></div><div class="ba-info"><h4>Keisha R.</h4><span class="ba-time">5 months</span><p>Down 35 lb postpartum. Found her routine again.</p></div></div>
-        <div class="ba"><div class="ba-img"><img src="4.webp" alt="" loading="lazy"></div><div class="ba-info"><h4>Lauren T.</h4><span class="ba-time">10 months</span><p>Went from cardio-only to squatting 185 lb.</p></div></div>
-        <div class="ba"><div class="ba-img"><img src="5.webp" alt="" loading="lazy"></div><div class="ba-info"><h4>Sofia M.</h4><span class="ba-time">4 months</span><p>Lost 20 lb and gained confidence she didn&rsquo;t expect.</p></div></div>
-        <div class="ba"><div class="ba-img"><img src="6.webp" alt="" loading="lazy"></div><div class="ba-info"><h4>Jessica L.</h4><span class="ba-time">7 months</span><p>Lost 45 lb. Off blood pressure meds.</p></div></div>
-        <div class="ba"><div class="ba-img"><img src="7.webp" alt="" loading="lazy"></div><div class="ba-info"><h4>Marcus D.</h4><span class="ba-time">6 months</span><p>Down 40 lb. Runs his first 5K next month.</p></div></div>
+        <div class="ba"><div class="ba-img"><img src="1.webp" alt="" loading="lazy" decoding="async"></div><div class="ba-info"><h4>Maria S.</h4><span class="ba-time">6 months</span><p>Lost 28 lb. Now trains four days a week.</p></div></div>
+        <div class="ba"><div class="ba-img"><img src="2.webp" alt="" loading="lazy" decoding="async"></div><div class="ba-info"><h4>Diane W.</h4><span class="ba-time">8 months</span><p>Started at 58. Stronger than she&rsquo;s been in 20 years.</p></div></div>
+        <div class="ba"><div class="ba-img"><img src="3.webp" alt="" loading="lazy" decoding="async"></div><div class="ba-info"><h4>Keisha R.</h4><span class="ba-time">5 months</span><p>Down 35 lb postpartum. Found her routine again.</p></div></div>
+        <div class="ba"><div class="ba-img"><img src="4.webp" alt="" loading="lazy" decoding="async"></div><div class="ba-info"><h4>Lauren T.</h4><span class="ba-time">10 months</span><p>Went from cardio-only to squatting 185 lb.</p></div></div>
+        <div class="ba"><div class="ba-img"><img src="5.webp" alt="" loading="lazy" decoding="async"></div><div class="ba-info"><h4>Sofia M.</h4><span class="ba-time">4 months</span><p>Lost 20 lb and gained confidence she didn&rsquo;t expect.</p></div></div>
+        <div class="ba"><div class="ba-img"><img src="6.webp" alt="" loading="lazy" decoding="async"></div><div class="ba-info"><h4>Jessica L.</h4><span class="ba-time">7 months</span><p>Lost 45 lb. Off blood pressure meds.</p></div></div>
+        <div class="ba"><div class="ba-img"><img src="7.webp" alt="" loading="lazy" decoding="async"></div><div class="ba-info"><h4>Marcus D.</h4><span class="ba-time">6 months</span><p>Down 40 lb. Runs his first 5K next month.</p></div></div>
 
       </div>
     </div>
@@ -965,7 +966,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
 
       <div class="ev-card ev-live">
         <div class="ev-tag live">Happening Now</div>
-        <div class="ev-img"><img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=600&q=80&auto=format&fit=crop" alt="Summer Shred Challenge" loading="lazy"></div>
+        <div class="ev-img"><img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=400&q=70&auto=format&fit=crop" alt="Summer Shred Challenge" loading="lazy" decoding="async"></div>
         <div class="ev-body">
           <span class="ev-date">Jun 16 &mdash; Jul 27</span>
           <h3>Summer Shred Challenge</h3>
@@ -976,7 +977,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
 
       <div class="ev-card ev-upcoming" data-event="open-day-aug">
         <div class="ev-tag upcoming">Upcoming</div>
-        <div class="ev-img"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80&auto=format&fit=crop" alt="Open Day" loading="lazy"></div>
+        <div class="ev-img"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&q=70&auto=format&fit=crop" alt="Open Day" loading="lazy" decoding="async"></div>
         <div class="ev-body">
           <span class="ev-date">Aug 9, 2026 &middot; 10am &mdash; 2pm</span>
           <h3>Open Day</h3>
@@ -988,7 +989,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
 
       <div class="ev-card ev-upcoming" data-event="lifting-comp-sep">
         <div class="ev-tag upcoming">Upcoming</div>
-        <div class="ev-img"><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=600&q=80&auto=format&fit=crop" alt="In-House Lifting Comp" loading="lazy"></div>
+        <div class="ev-img"><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=400&q=70&auto=format&fit=crop" alt="In-House Lifting Comp" loading="lazy" decoding="async"></div>
         <div class="ev-body">
           <span class="ev-date">Sep 20, 2026 &middot; 9am</span>
           <h3>In-House Lifting Comp</h3>
@@ -1000,7 +1001,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
 
       <div class="ev-card ev-upcoming" data-event="nutrition-workshop-oct">
         <div class="ev-tag upcoming">Upcoming</div>
-        <div class="ev-img"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80&auto=format&fit=crop" alt="Nutrition Workshop" loading="lazy"></div>
+        <div class="ev-img"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400&q=70&auto=format&fit=crop" alt="Nutrition Workshop" loading="lazy" decoding="async"></div>
         <div class="ev-body">
           <span class="ev-date">Oct 4, 2026 &middot; 11am</span>
           <h3>Nutrition Workshop</h3>
@@ -1033,7 +1034,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
         <div class="res">
           <div class="res-img">
             <span class="res-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.5 20.25a8.25 8.25 0 0 1 16.5 0"/></svg></span>
-            <img class="duo" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80&auto=format&fit=crop" alt="Rachel M." loading="lazy" onerror="this.style.display='none'">
+            <img class="duo" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=70&auto=format&fit=crop" alt="Rachel M." loading="lazy" onerror="this.style.display='none'">
           </div>
           <div class="res-body">
             <p>&ldquo;I quit three gyms before this one. Here, someone actually notices when you don&rsquo;t show up.&rdquo;</p>
@@ -1043,7 +1044,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
         <div class="res">
           <div class="res-img">
             <span class="res-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.5 20.25a8.25 8.25 0 0 1 16.5 0"/></svg></span>
-            <img class="duo" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&q=80&auto=format&fit=crop" alt="James O." loading="lazy" onerror="this.style.display='none'">
+            <img class="duo" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=70&auto=format&fit=crop" alt="James O." loading="lazy" onerror="this.style.display='none'">
           </div>
           <div class="res-body">
             <p>&ldquo;Started in Foundations with zero experience. Eight months later I did my first pull-up at 44.&rdquo;</p>
@@ -1053,7 +1054,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
         <div class="res">
           <div class="res-img">
             <span class="res-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.5 20.25a8.25 8.25 0 0 1 16.5 0"/></svg></span>
-            <img class="duo" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&auto=format&fit=crop" alt="Chris D." loading="lazy" onerror="this.style.display='none'">
+            <img class="duo" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=70&auto=format&fit=crop" alt="Chris D." loading="lazy" onerror="this.style.display='none'">
           </div>
           <div class="res-body">
             <p>&ldquo;My deadlift was stuck for two years. A coach here found the fix in one session.&rdquo;</p>
@@ -1063,7 +1064,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
         <div class="res">
           <div class="res-img">
             <span class="res-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.5 20.25a8.25 8.25 0 0 1 16.5 0"/></svg></span>
-            <img class="duo" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&q=80&auto=format&fit=crop" alt="Sarah L." loading="lazy" onerror="this.style.display='none'">
+            <img class="duo" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=70&auto=format&fit=crop" alt="Sarah L." loading="lazy" onerror="this.style.display='none'">
           </div>
           <div class="res-body">
             <p>&ldquo;Came in to lose weight. Ended up running my first 5K at 39.&rdquo;</p>
@@ -1073,7 +1074,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
         <div class="res">
           <div class="res-img">
             <span class="res-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.5 20.25a8.25 8.25 0 0 1 16.5 0"/></svg></span>
-            <img class="duo" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80&auto=format&fit=crop" alt="Tom H." loading="lazy" onerror="this.style.display='none'">
+            <img class="duo" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=70&auto=format&fit=crop" alt="Tom H." loading="lazy" onerror="this.style.display='none'">
           </div>
           <div class="res-body">
             <p>&ldquo;My back pain is gone. My coach worked around it until it wasn&rsquo;t there anymore.&rdquo;</p>
@@ -1083,7 +1084,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
         <div class="res">
           <div class="res-img">
             <span class="res-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.5 20.25a8.25 8.25 0 0 1 16.5 0"/></svg></span>
-            <img class="duo" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80&auto=format&fit=crop" alt="Ana G." loading="lazy" onerror="this.style.display='none'">
+            <img class="duo" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=70&auto=format&fit=crop" alt="Ana G." loading="lazy" onerror="this.style.display='none'">
           </div>
           <div class="res-body">
             <p>&ldquo;I wanted to bench my bodyweight by 40. My coach wrote the program and I hit it three months early.&rdquo;</p>
@@ -1093,7 +1094,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
         <div class="res">
           <div class="res-img">
             <span class="res-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.5 20.25a8.25 8.25 0 0 1 16.5 0"/></svg></span>
-            <img class="duo" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=600&q=80&auto=format&fit=crop" alt="Kevin W." loading="lazy" onerror="this.style.display='none'">
+            <img class="duo" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=70&auto=format&fit=crop" alt="Kevin W." loading="lazy" onerror="this.style.display='none'">
           </div>
           <div class="res-body">
             <p>&ldquo;Doctor said exercise or medication. Six months here and I&rsquo;m off blood pressure meds.&rdquo;</p>
@@ -1112,9 +1113,9 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
     <p class="eyebrow reveal">The space</p>
     <h2 class="display reveal">The <span style="color:transparent;-webkit-text-stroke:1.5px var(--ink)">space.</span></h2>
     <div class="gal reveal">
-      <figure><img class="duo" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1400&auto=format&fit=crop" alt="Main gym floor" loading="lazy" onerror="this.remove()"><figcaption>The floor</figcaption></figure>
-      <figure><img class="duo" src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=900&auto=format&fit=crop" alt="Free weights area" loading="lazy" onerror="this.remove()"><figcaption>Platforms</figcaption></figure>
-      <figure><img class="duo" src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=900&auto=format&fit=crop" alt="Conditioning zone" loading="lazy" onerror="this.remove()"><figcaption>Conditioning</figcaption></figure>
+      <figure><img class="duo" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=70&w=800&auto=format&fit=crop" alt="Main gym floor" loading="lazy" onerror="this.remove()"><figcaption>The floor</figcaption></figure>
+      <figure><img class="duo" src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=70&w=500&auto=format&fit=crop" alt="Free weights area" loading="lazy" onerror="this.remove()"><figcaption>Platforms</figcaption></figure>
+      <figure><img class="duo" src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=70&w=500&auto=format&fit=crop" alt="Conditioning zone" loading="lazy" onerror="this.remove()"><figcaption>Conditioning</figcaption></figure>
     </div>
     <div class="amen reveal">
       <div>4 competition lifting platforms</div>
@@ -1248,23 +1249,23 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
   </div>
   <div class="ig-marquee">
     <div class="ig-track">
-      <div class="ig-img"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
-      <div class="ig-img"><img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
-      <div class="ig-img"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
-      <div class="ig-img"><img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
-      <div class="ig-img"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
-      <div class="ig-img"><img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
-      <div class="ig-img"><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
-      <div class="ig-img"><img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=70&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=400&q=70&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&q=70&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400&q=70&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=400&q=70&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=400&q=70&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=400&q=70&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?w=400&q=70&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div>
       <!-- duplicate for seamless loop -->
-      <div class="ig-img"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
-      <div class="ig-img"><img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
-      <div class="ig-img"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
-      <div class="ig-img"><img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
-      <div class="ig-img"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
-      <div class="ig-img"><img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
-      <div class="ig-img"><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
-      <div class="ig-img"><img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&q=70&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=400&q=70&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&q=70&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400&q=70&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=400&q=70&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=400&q=70&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=400&q=70&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?w=400&q=70&auto=format&fit=crop" alt="" loading="lazy" decoding="async"></div>
     </div>
   </div>
 </section>
@@ -1385,9 +1386,14 @@ document.querySelectorAll('input[type="email"]').forEach(el=>{
 });
 
 // lenis smooth scroll
-const lenis=new Lenis({duration:1.2,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t))});
-function raf(time){lenis.raf(time);requestAnimationFrame(raf)}
-requestAnimationFrame(raf);
+function initLenis(){
+  if(typeof Lenis==='undefined')return;
+  const lenis=new Lenis({duration:1.2,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t))});
+  function raf(time){lenis.raf(time);requestAnimationFrame(raf)}
+  requestAnimationFrame(raf);
+}
+if(typeof Lenis!=='undefined')initLenis();
+else window.addEventListener('DOMContentLoaded',initLenis);
 
 // splash loader
 const splash=document.getElementById('splash');
@@ -1410,6 +1416,8 @@ function dismissSplash(){
   setTimeout(()=>{
     splash.classList.add('done');
     document.querySelector('.hero').classList.add('loaded');
+    const hv=document.getElementById('heroVid');
+    if(hv&&!hv.src){hv.src='hero.mp4';hv.play().catch(()=>{})}
   },600);
 }
 
