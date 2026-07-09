@@ -407,6 +407,25 @@ header.header-scrolled,header.nav-open{background:rgba(19,19,18,.86);backdrop-fi
 .loc-map iframe{display:block}
 @media(max-width:820px){.loc-grid{grid-template-columns:1fr}.loc-map{aspect-ratio:16/9}}
 
+/* ---------- instagram ---------- */
+.ig-section{padding-top:var(--pad-y);padding-bottom:0;overflow:hidden}
+.ig-header{text-align:center;margin-bottom:40px;padding:0 var(--pad-x)}
+.ig-header .eyebrow{justify-content:center}
+.ig-header .display{margin:0 auto}
+.ig-header p{color:var(--stone-dark);margin-top:12px;font-size:.95rem}
+.ig-header a{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);text-decoration:none;border:1px solid var(--ink);padding:12px 24px;border-radius:4px;transition:background .2s,color .2s}
+.ig-header a:hover{background:var(--ink);color:var(--paper)}
+.ig-marquee{width:100vw;margin-left:calc(50% - 50vw);overflow:hidden}
+.ig-track{display:flex;gap:6px;width:max-content;animation:igScroll 35s linear infinite}
+.ig-track:hover{animation-play-state:paused}
+@keyframes igScroll{to{transform:translateX(-50%)}}
+.ig-img{width:220px;height:220px;flex-shrink:0;overflow:hidden;position:relative}
+.ig-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s var(--ease-out)}
+.ig-img:hover img{transform:scale(1.06)}
+.ig-img::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,0);transition:background .3s}
+.ig-img:hover::after{background:rgba(0,0,0,.15)}
+@media(max-width:820px){.ig-img{width:160px;height:160px}}
+
 /* ---------- final cta ---------- */
 .final .display{font-size:clamp(2.8rem,7.5vw,6.5rem)}
 .lead-form{margin-top:52px;display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:14px;max-width:960px}
@@ -1200,6 +1219,40 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
       <div class="loc-map">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3446.5!2d-97.735!3d30.245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDE0JzQyLjAiTiA5N8KwNDQnMDYuMCJX!5e0!3m2!1sen!2sus!4v1" width="100%" height="100%" style="border:0;border-radius:4px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INSTAGRAM ============ -->
+<section class="ig-section">
+  <div class="ig-header reveal">
+    <p class="eyebrow">Instagram</p>
+    <h2 class="display">Follow the <span class="outline">grind.</span></h2>
+    <p>Gym updates, member wins, and behind-the-scenes.</p>
+    <a href="https://instagram.com/fieldhouseclub" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+      @fieldhouseclub
+    </a>
+  </div>
+  <div class="ig-marquee">
+    <div class="ig-track">
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
+      <!-- duplicate for seamless loop -->
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
+      <div class="ig-img"><img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?w=500&q=80&auto=format&fit=crop" alt="" loading="lazy"></div>
     </div>
   </div>
 </section>
