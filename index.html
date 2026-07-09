@@ -68,6 +68,10 @@ h2.display{font-size:clamp(2.4rem,5.4vw,4.6rem);max-width:16ch}
 .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;padding:18px 30px;border:1px solid transparent;cursor:pointer;transition:transform .18s var(--ease-out),background .18s var(--ease-out),color .18s var(--ease-out);white-space:nowrap}
 .btn:active{transform:scale(0.97)}
 .btn-volt{background:var(--volt);color:var(--ink)}
+.btn-dark{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn-dark:hover{background:#2a2a28}
+.btn-outline{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn-outline:hover{background:var(--ink);color:var(--paper)}
 @media(hover:hover) and (pointer:fine){
   .btn-volt:hover{transform:translateY(-2px)}
   .btn-volt:hover:active{transform:translateY(-2px) scale(0.97)}
@@ -287,14 +291,15 @@ header.header-scrolled,header.nav-open{background:rgba(19,19,18,.86);backdrop-fi
 @media(hover:hover) and (pointer:fine){.ba-nav button:disabled:hover{background:#fff;color:var(--ink);border-color:var(--line-light)}}
 .ba-scroll{margin-top:40px;overflow:hidden;width:100vw;margin-left:calc(50% - 50vw)}
 .ba-grid{display:flex;gap:20px;width:max-content;animation:baTicker 30s linear infinite}
-.ba{border:1px solid var(--line-light);background:#fff;overflow:hidden;width:clamp(280px,30vw,380px);flex-shrink:0}
+.ba{position:relative;overflow:hidden;width:clamp(280px,30vw,380px);flex-shrink:0;border-radius:8px}
 @keyframes baTicker{to{transform:translateX(-50%)}}
 .ba-img{position:relative;overflow:hidden;background:linear-gradient(160deg,#26352c,#131312)}
 .ba-img img{width:100%;display:block}
-.ba-info{padding:22px 24px 26px;border-top:1px solid var(--line-light)}
+.ba-img::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,transparent 50%);pointer-events:none}
+.ba-info{position:absolute;bottom:0;left:0;right:0;padding:18px 20px;z-index:1;color:#fff}
 .ba-info h4{font-family:var(--display);font-variation-settings:'wdth' 115;font-weight:800;text-transform:uppercase;font-size:1.05rem;line-height:1.15}
-.ba-info .ba-time{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--line-light);margin-top:8px;color:var(--stone)}
-.ba-info p{font-size:.9rem;color:var(--stone-dark);margin-top:10px}
+.ba-info .ba-time{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:4px 8px;border:1px solid rgba(255,255,255,.3);margin-top:6px;color:rgba(255,255,255,.8);border-radius:3px}
+.ba-info p{font-size:.85rem;color:rgba(255,255,255,.75);margin-top:6px}
 .ba-progress{margin-top:24px;height:2px;background:var(--line-light);border-radius:1px;overflow:hidden}
 .ba-progress .bar-fill{height:100%;background:var(--ink);border-radius:1px;width:20%;transition:width .15s var(--ease-out)}
 
@@ -958,7 +963,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
           <h3>Open Day</h3>
           <p>Bring a friend, try every class, meet the coaches. Free for everyone &mdash; members and guests.</p>
           <div class="ev-meta"><span>Free entry</span></div>
-          <button class="ev-remind btn btn-dark" data-event="open-day-aug">Set reminder</button>
+          <button class="ev-remind btn btn-outline" data-event="open-day-aug">Set reminder</button>
         </div>
       </div>
 
@@ -970,7 +975,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
           <h3>In-House Lifting Comp</h3>
           <p>Squat, bench, deadlift. All levels welcome. Divisions by experience &mdash; not just weight class.</p>
           <div class="ev-meta"><span>Members only</span></div>
-          <button class="ev-remind btn btn-dark" data-event="lifting-comp-sep">Set reminder</button>
+          <button class="ev-remind btn btn-outline" data-event="lifting-comp-sep">Set reminder</button>
         </div>
       </div>
 
@@ -982,20 +987,10 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
           <h3>Nutrition Workshop</h3>
           <p>Practical meal prep and macro tracking. No fad diets &mdash; just what actually works.</p>
           <div class="ev-meta"><span>$15 / free for members</span></div>
-          <button class="ev-remind btn btn-dark" data-event="nutrition-workshop-oct">Set reminder</button>
+          <button class="ev-remind btn btn-outline" data-event="nutrition-workshop-oct">Set reminder</button>
         </div>
       </div>
 
-      <div class="ev-card ev-past">
-        <div class="ev-tag past">Completed</div>
-        <div class="ev-img"><img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=600&q=80&auto=format&fit=crop" alt="Spring 5K" loading="lazy"></div>
-        <div class="ev-body">
-          <span class="ev-date">Apr 12, 2026</span>
-          <h3>Fieldhouse Spring 5K</h3>
-          <p>Community run through Eastside Trail. 68 runners, all paces welcome.</p>
-          <div class="ev-meta"><span>68 runners</span><span class="ev-status done">Completed</span></div>
-        </div>
-      </div>
 
     </div>
   </div>
@@ -1163,7 +1158,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
 
 
 <!-- ============ FAQ ============ -->
-<section class="section" style="padding-top:0">
+<section class="section">
   <div class="wrap">
     <p class="eyebrow reveal">Questions</p>
     <h2 class="display reveal">Common questions.</h2>
