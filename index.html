@@ -312,6 +312,43 @@ header.header-scrolled,header.nav-open{background:rgba(19,19,18,.86);backdrop-fi
 .coach p{font-size:.9rem;color:rgba(244,241,234,.65)}
 @media(max-width:820px){.coach-grid{grid-template-columns:1fr}}
 
+/* ---------- events & challenges ---------- */
+.ev-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
+.ev-card{border:1px solid var(--line-light);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s var(--ease-out),box-shadow .2s var(--ease-out)}
+.ev-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.ev-card.ev-past{opacity:.55}
+.ev-tag{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:8px 16px;font-weight:700}
+.ev-tag.live{background:#16a34a;color:#fff}
+.ev-tag.upcoming{background:var(--ink);color:var(--paper)}
+.ev-tag.past{background:rgba(0,0,0,.06);color:var(--stone)}
+.ev-img{height:180px;overflow:hidden}
+.ev-img img{width:100%;height:100%;object-fit:cover;display:block}
+.ev-body{padding:24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.ev-date{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--stone);text-transform:uppercase}
+.ev-body h3{font-family:var(--display);font-variation-settings:'wdth' 118;font-weight:900;text-transform:uppercase;font-size:1.3rem;line-height:1;letter-spacing:-1px}
+.ev-body p{color:var(--stone-dark);font-size:.93rem;max-width:50ch}
+.ev-meta{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--stone);margin-top:auto;padding-top:8px}
+.ev-status{padding:4px 10px;border-radius:3px;font-weight:700;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.ev-status.on{background:rgba(22,163,74,.12);color:#16a34a}
+.ev-status.done{background:rgba(0,0,0,.06);color:var(--stone)}
+.ev-remind{margin-top:12px;width:100%;text-align:center;justify-content:center;border-radius:6px;font-size:12px;padding:12px 16px}
+.ev-remind.reminded{background:var(--volt);color:var(--ink);border-color:var(--volt);pointer-events:none}
+@media(max-width:820px){.ev-grid{grid-template-columns:1fr}}
+
+/* ---------- reminder modal ---------- */
+.rm-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s var(--ease-out),visibility .3s}
+.rm-overlay.open{opacity:1;visibility:visible}
+.rm-modal{background:var(--paper);color:var(--ink);border-radius:12px;width:90%;max-width:400px;padding:32px;transform:translateY(20px) scale(.97);transition:transform .35s var(--ease-out);box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.rm-overlay.open .rm-modal{transform:none}
+.rm-modal h3{font-family:var(--display);font-variation-settings:'wdth' 118;font-weight:900;text-transform:uppercase;font-size:1.3rem;letter-spacing:-1px;margin-bottom:4px}
+.rm-modal p{color:var(--stone-dark);font-size:.9rem;margin-bottom:20px}
+.rm-modal input{width:100%;border:1px solid var(--line-light);background:transparent;padding:14px 16px;border-radius:6px;font-family:var(--body);font-size:14px;outline:none;transition:border-color .2s;margin-bottom:12px}
+.rm-modal input:focus{border-color:var(--ink)}
+.rm-modal .btn{width:100%;text-align:center;justify-content:center;border-radius:6px}
+.rm-ok{text-align:center;display:none}
+.rm-ok.show{display:block}
+.rm-ok p{color:var(--stone-dark);font-family:var(--mono);font-size:13px;margin:0}
+
 /* ---------- space / amenities ---------- */
 .amen{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line-light);margin-top:64px}
 .amen div{padding:26px 28px;border-right:1px solid var(--line-light);border-bottom:1px solid var(--line-light);font-family:var(--mono);font-size:13px;letter-spacing:.06em;display:flex;gap:12px;align-items:baseline}
@@ -958,6 +995,76 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
   </div>
 </section>
 
+<!-- ============ EVENTS & CHALLENGES ============ -->
+<section class="section" id="events">
+  <div class="wrap">
+    <p class="eyebrow reveal">Events &amp; Challenges</p>
+    <h2 class="display reveal">What&rsquo;s <span class="outline">coming up.</span></h2>
+    <p class="lede reveal" style="color:var(--stone-dark)">Competitions, community events, and challenges to keep you pushing.</p>
+    <div class="ev-grid reveal">
+
+      <div class="ev-card ev-live">
+        <div class="ev-tag live">Happening Now</div>
+        <div class="ev-img"><img src="https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=600&q=80&auto=format&fit=crop" alt="Summer Shred Challenge" loading="lazy"></div>
+        <div class="ev-body">
+          <span class="ev-date">Jun 16 &mdash; Jul 27</span>
+          <h3>Summer Shred Challenge</h3>
+          <p>6-week body composition challenge. Weekly check-ins, nutrition guidance, and prizes for most improved.</p>
+          <div class="ev-meta"><span>42 participants</span><span class="ev-status on">In progress</span></div>
+        </div>
+      </div>
+
+      <div class="ev-card ev-upcoming" data-event="open-day-aug">
+        <div class="ev-tag upcoming">Upcoming</div>
+        <div class="ev-img"><img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80&auto=format&fit=crop" alt="Open Day" loading="lazy"></div>
+        <div class="ev-body">
+          <span class="ev-date">Aug 9, 2026 &middot; 10am &mdash; 2pm</span>
+          <h3>Open Day</h3>
+          <p>Bring a friend, try every class, meet the coaches. Free for everyone &mdash; members and guests.</p>
+          <div class="ev-meta"><span>Free entry</span></div>
+          <button class="ev-remind btn btn-dark" data-event="open-day-aug">Set reminder</button>
+        </div>
+      </div>
+
+      <div class="ev-card ev-upcoming" data-event="lifting-comp-sep">
+        <div class="ev-tag upcoming">Upcoming</div>
+        <div class="ev-img"><img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=600&q=80&auto=format&fit=crop" alt="In-House Lifting Comp" loading="lazy"></div>
+        <div class="ev-body">
+          <span class="ev-date">Sep 20, 2026 &middot; 9am</span>
+          <h3>In-House Lifting Comp</h3>
+          <p>Squat, bench, deadlift. All levels welcome. Divisions by experience &mdash; not just weight class.</p>
+          <div class="ev-meta"><span>Members only</span></div>
+          <button class="ev-remind btn btn-dark" data-event="lifting-comp-sep">Set reminder</button>
+        </div>
+      </div>
+
+      <div class="ev-card ev-upcoming" data-event="nutrition-workshop-oct">
+        <div class="ev-tag upcoming">Upcoming</div>
+        <div class="ev-img"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80&auto=format&fit=crop" alt="Nutrition Workshop" loading="lazy"></div>
+        <div class="ev-body">
+          <span class="ev-date">Oct 4, 2026 &middot; 11am</span>
+          <h3>Nutrition Workshop</h3>
+          <p>Practical meal prep and macro tracking. No fad diets &mdash; just what actually works.</p>
+          <div class="ev-meta"><span>$15 / free for members</span></div>
+          <button class="ev-remind btn btn-dark" data-event="nutrition-workshop-oct">Set reminder</button>
+        </div>
+      </div>
+
+      <div class="ev-card ev-past">
+        <div class="ev-tag past">Completed</div>
+        <div class="ev-img"><img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=600&q=80&auto=format&fit=crop" alt="Spring 5K" loading="lazy"></div>
+        <div class="ev-body">
+          <span class="ev-date">Apr 12, 2026</span>
+          <h3>Fieldhouse Spring 5K</h3>
+          <p>Community run through Eastside Trail. 68 runners, all paces welcome.</p>
+          <div class="ev-meta"><span>68 runners</span><span class="ev-status done">Completed</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ============ THE SPACE ============ -->
 <section class="section">
   <div class="wrap">
@@ -1097,7 +1204,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
     <p class="lede reveal">One week, full access, no card needed. Come see if it&rsquo;s the right fit.</p>
     <div class="lead-form reveal">
       <input type="text" placeholder="Your name" aria-label="Your name">
-      <input type="tel" placeholder="Phone number" aria-label="Phone number">
+      <input type="email" placeholder="Email address" aria-label="Email address" id="ctaEmail">
       <select aria-label="Your main goal">
         <option>Main goal&hellip;</option>
         <option>Get stronger</option>
@@ -1107,8 +1214,8 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
       </select>
       <button class="btn btn-volt" id="claimBtn">Claim my free week <span class="arr">&rarr;</span></button>
     </div>
-    <p class="form-note">We&rsquo;ll text you to set up your tour. No spam.</p>
-    <div class="form-ok" id="formOk">&#10003; &nbsp;Done! We&rsquo;ll text you shortly to book your visit.</div>
+    <p class="form-note">We&rsquo;ll email you to set up your tour. No spam.</p>
+    <div class="form-ok" id="formOk">&#10003; &nbsp;Done! We&rsquo;ll email you shortly to book your visit.</div>
   </div>
 </section>
 
@@ -1136,6 +1243,22 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
     <div class="bk-ok" id="bkOk">
       <h3 class="bk-title" style="margin-bottom:8px">You&rsquo;re in!</h3>
       <p>We&rsquo;ll send a confirmation text shortly. See you on the floor.</p>
+    </div>
+  </div>
+</div>
+
+<!-- reminder modal -->
+<div class="rm-overlay" id="rmOverlay">
+  <div class="rm-modal">
+    <div id="rmForm">
+      <h3 id="rmTitle">Set Reminder</h3>
+      <p id="rmDesc">We&rsquo;ll email you before the event so you don&rsquo;t miss it.</p>
+      <input type="email" placeholder="Email address" id="rmEmail">
+      <button class="btn btn-dark" id="rmSubmit">Remind me <span class="arr">&rarr;</span></button>
+    </div>
+    <div class="rm-ok" id="rmOk">
+      <h3 style="margin-bottom:8px">Reminder set!</h3>
+      <p>We&rsquo;ll email you before the event.</p>
     </div>
   </div>
 </div>
@@ -1278,7 +1401,13 @@ resScroll.addEventListener('pointerup',()=>{isDragging=false});
 resScroll.addEventListener('pointercancel',()=>{isDragging=false});
 
 // demo form
+// prefill CTA form
+const ctaEmail=document.getElementById('ctaEmail');
+if(ctaEmail&&getSavedEmail())ctaEmail.value=getSavedEmail();
+
 document.getElementById('claimBtn').addEventListener('click',()=>{
+  const email=ctaEmail?ctaEmail.value.trim():'';
+  if(email)saveUser('',email);
   const ok=document.getElementById('formOk');
   ok.classList.add('show');
 });
@@ -1357,6 +1486,22 @@ const stickyObs=new IntersectionObserver(es=>{
 },{threshold:0});
 stickyObs.observe(heroEl);
 
+// email recall — save & restore across all forms
+const FH_EMAIL_KEY='fh_user_email';
+const FH_NAME_KEY='fh_user_name';
+function saveUser(name,email){
+  if(email)localStorage.setItem(FH_EMAIL_KEY,email);
+  if(name)localStorage.setItem(FH_NAME_KEY,name);
+}
+function getSavedEmail(){return localStorage.getItem(FH_EMAIL_KEY)||''}
+function getSavedName(){return localStorage.getItem(FH_NAME_KEY)||''}
+
+// prefill all email/name inputs on load
+document.querySelectorAll('input[type="email"]').forEach(el=>{
+  const saved=getSavedEmail();
+  if(saved&&!el.value)el.value=saved;
+});
+
 // booking modal
 const bkOverlay=document.getElementById('bkOverlay');
 const bkClose=document.getElementById('bkClose');
@@ -1391,6 +1536,8 @@ document.querySelectorAll('.tt-class').forEach(cl=>{
     bkForm.style.display='';
     bkBody.style.display='';
     bkOk.classList.remove('show');
+    document.getElementById('bkName').value=getSavedName();
+    document.getElementById('bkPhone').value=getSavedEmail();
     bkOverlay.classList.add('open');
     document.body.style.overflow='hidden';
   });
@@ -1406,13 +1553,58 @@ bkOverlay.addEventListener('click',e=>{
 
 document.getElementById('bkBook').addEventListener('click',()=>{
   const name=document.getElementById('bkName').value.trim();
-  const phone=document.getElementById('bkPhone').value.trim();
-  if(!name||!phone)return;
+  const email=document.getElementById('bkPhone').value.trim();
+  if(!name||!email)return;
+  saveUser(name,email);
   bkBody.style.display='none';
   bkOk.classList.add('show');
-  document.getElementById('bkName').value='';
-  document.getElementById('bkPhone').value='';
   setTimeout(()=>{bkOverlay.classList.remove('open');document.body.style.overflow='';bkOk.classList.remove('show');bkBody.style.display=''},3000);
+});
+
+// event reminder modal
+const rmOverlay=document.getElementById('rmOverlay');
+const rmEmail=document.getElementById('rmEmail');
+const rmForm=document.getElementById('rmForm');
+const rmOk=document.getElementById('rmOk');
+const rmTitle=document.getElementById('rmTitle');
+let activeRemindBtn=null;
+
+// restore already-reminded state
+const reminders=JSON.parse(localStorage.getItem('fh_reminders')||'{}');
+document.querySelectorAll('.ev-remind').forEach(btn=>{
+  const evId=btn.dataset.event;
+  if(reminders[evId]){
+    btn.textContent='Reminder set';
+    btn.classList.add('reminded');
+  }
+  btn.addEventListener('click',()=>{
+    activeRemindBtn=btn;
+    const eventName=btn.closest('.ev-card').querySelector('h3').textContent;
+    rmTitle.textContent='Remind me: '+eventName;
+    rmEmail.value=getSavedEmail();
+    rmForm.style.display='';
+    rmOk.classList.remove('show');
+    rmOverlay.classList.add('open');
+    document.body.style.overflow='hidden';
+  });
+});
+
+rmOverlay.addEventListener('click',e=>{
+  if(e.target===rmOverlay){rmOverlay.classList.remove('open');document.body.style.overflow=''}
+});
+
+document.getElementById('rmSubmit').addEventListener('click',()=>{
+  const email=rmEmail.value.trim();
+  if(!email)return;
+  saveUser('',email);
+  const evId=activeRemindBtn.dataset.event;
+  reminders[evId]=email;
+  localStorage.setItem('fh_reminders',JSON.stringify(reminders));
+  activeRemindBtn.textContent='Reminder set';
+  activeRemindBtn.classList.add('reminded');
+  rmForm.style.display='none';
+  rmOk.classList.add('show');
+  setTimeout(()=>{rmOverlay.classList.remove('open');document.body.style.overflow=''},2000);
 });
 
 // timetable day tabs
