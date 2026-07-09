@@ -291,7 +291,7 @@ header.header-scrolled,header.nav-open{background:rgba(19,19,18,.86);backdrop-fi
 @media(hover:hover) and (pointer:fine){.ba-nav button:disabled:hover{background:#fff;color:var(--ink);border-color:var(--line-light)}}
 .ba-scroll{margin-top:40px;overflow:hidden;width:100vw;margin-left:calc(50% - 50vw)}
 .ba-grid{display:flex;gap:20px;width:max-content;animation:baTicker 30s linear infinite}
-.ba{position:relative;overflow:hidden;width:clamp(280px,30vw,380px);flex-shrink:0;border-radius:8px}
+.ba{position:relative;overflow:hidden;width:clamp(280px,30vw,380px);flex-shrink:0;border-radius:0}
 @keyframes baTicker{to{transform:translateX(-50%)}}
 .ba-img{position:relative;overflow:hidden;background:linear-gradient(160deg,#26352c,#131312)}
 .ba-img img{width:100%;display:block}
@@ -320,7 +320,7 @@ header.header-scrolled,header.nav-open{background:rgba(19,19,18,.86);backdrop-fi
 
 /* ---------- events & challenges ---------- */
 .ev-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
-.ev-card{border:1px solid var(--line-light);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s var(--ease-out),box-shadow .2s var(--ease-out)}
+.ev-card{border:1px solid var(--line-light);border-radius:0;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s var(--ease-out),box-shadow .2s var(--ease-out)}
 .ev-card:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,0,0,.08)}
 .ev-card.ev-past{opacity:.55}
 .ev-tag{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:8px 16px;font-weight:700}
@@ -424,12 +424,12 @@ header.header-scrolled,header.nav-open{background:rgba(19,19,18,.86);backdrop-fi
 .ig-track{display:flex;gap:6px;width:max-content;animation:igScroll 35s linear infinite}
 .ig-track:hover{animation-play-state:paused}
 @keyframes igScroll{to{transform:translateX(-50%)}}
-.ig-img{width:220px;height:220px;flex-shrink:0;overflow:hidden;position:relative}
+.ig-img{width:300px;height:300px;flex-shrink:0;overflow:hidden;position:relative}
 .ig-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s var(--ease-out)}
 .ig-img:hover img{transform:scale(1.06)}
 .ig-img::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,0);transition:background .3s}
 .ig-img:hover::after{background:rgba(0,0,0,.15)}
-@media(max-width:820px){.ig-img{width:160px;height:160px}}
+@media(max-width:820px){.ig-img{width:220px;height:220px}}
 
 /* ---------- final cta ---------- */
 .final .display{font-size:clamp(2.8rem,7.5vw,6.5rem)}
@@ -1222,7 +1222,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
 <section class="ig-section">
   <div class="ig-header reveal">
     <p class="eyebrow">Instagram</p>
-    <h2 class="display">Follow the <span class="outline">grind.</span></h2>
+    <h2 class="display">Follow us on <span class="outline">Instagram.</span></h2>
     <p>Gym updates, member wins, and behind-the-scenes.</p>
     <a href="https://instagram.com/fieldhouseclub" target="_blank" rel="noopener">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
