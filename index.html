@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fieldhouse Athletic Club — Train Like It Matters</title>
+<title>Fieldhouse Athletic Club - Train Like It Matters</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
@@ -368,6 +368,22 @@ header.header-scrolled,header.nav-open{background:rgba(19,19,18,.86);backdrop-fi
 .rm-ok.show{display:block}
 .rm-ok p{color:var(--stone-dark);font-family:var(--mono);font-size:13px;margin:0}
 
+/* ---------- consult modal ---------- */
+.ct-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s var(--ease-out),visibility .3s}
+.ct-overlay.open{opacity:1;visibility:visible}
+.ct-modal{background:var(--paper);color:var(--ink);border-radius:12px;width:90%;max-width:440px;padding:32px;transform:translateY(20px) scale(.97);transition:transform .35s var(--ease-out);box-shadow:0 24px 60px rgba(0,0,0,.35);position:relative}
+.ct-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line-light);background:transparent;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;color:var(--ink);transition:background .2s}
+.ct-close:hover{background:rgba(0,0,0,.06)}
+.ct-overlay.open .ct-modal{transform:none}
+.ct-modal h3{font-family:var(--display);font-variation-settings:'wdth' 118;font-weight:900;text-transform:uppercase;font-size:1.3rem;letter-spacing:-1px;margin-bottom:4px}
+.ct-modal p{color:var(--stone-dark);font-size:.9rem;margin-bottom:20px}
+.ct-modal input,.ct-modal select{width:100%;border:1px solid var(--line-light);background:transparent;padding:14px 16px;border-radius:6px;font-family:var(--body);font-size:14px;outline:none;transition:border-color .2s;margin-bottom:12px}
+.ct-modal input:focus,.ct-modal select:focus{border-color:var(--ink)}
+.ct-modal .btn{width:100%;text-align:center;justify-content:center;border-radius:6px}
+.ct-ok{text-align:center;display:none}
+.ct-ok.show{display:block}
+.ct-ok p{color:var(--stone-dark);font-family:var(--mono);font-size:13px;margin:0}
+
 /* ---------- space / amenities ---------- */
 .amen{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line-light);margin-top:64px}
 .amen div{padding:26px 28px;border-right:1px solid var(--line-light);border-bottom:1px solid var(--line-light);font-family:var(--mono);font-size:13px;letter-spacing:.06em;display:flex;gap:12px;align-items:baseline}
@@ -567,7 +583,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
 <section class="hero dark grain" id="top">
   <div class="hero-img" aria-hidden="true"><video autoplay loop muted playsinline src="hero.mp4"></video></div>
   <div class="wrap" style="position:relative;z-index:1">
-    <p class="eyebrow">Fieldhouse Athletic Club — Austin, TX &middot; Est. 2019</p>
+    <p class="eyebrow">Fieldhouse Athletic Club - Austin, TX &middot; Est. 2019</p>
     <h1 class="display">The gym that<br>actually coaches<br><span class="outline">you.</span></h1>
     <div class="hero-sub">
       <div>
@@ -671,7 +687,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
               <span class="idx">03 -1-on-1</span>
               <h3>Personal Training</h3>
               <p>Your own coach, your own program. They track your progress and adjust every week.</p>
-              <a href="#start">Book a consult <span class="arr">&rarr;</span></a>
+              <a href="#" class="open-consult">Book a consult <span class="arr">&rarr;</span></a>
             </div>
           </div>
           <div class="prog" data-i="3">
@@ -1169,7 +1185,7 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
           <li>Individual program &amp; nutrition plan</li>
           <li>Direct line to your coach</li>
         </ul>
-        <a class="btn btn-ghost" href="#start">Book a consult</a>
+        <a class="btn btn-ghost open-consult" href="#">Book a consult</a>
       </div>
     </div>
     <p class="price-note">All plans are month to month. First week is free -no card needed.</p>
@@ -1334,6 +1350,33 @@ footer{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-
     <div class="rm-ok" id="rmOk">
       <h3 style="margin-bottom:8px">Reminder set!</h3>
       <p>We&rsquo;ll email you before the event.</p>
+    </div>
+  </div>
+</div>
+
+<!-- consult modal -->
+<div class="ct-overlay" id="ctOverlay">
+  <div class="ct-modal">
+    <button class="ct-close" id="ctClose">&times;</button>
+    <div id="ctForm">
+      <h3>Book a free consult</h3>
+      <p>Tell us a bit about yourself and we&rsquo;ll match you with the right coach.</p>
+      <input type="text" placeholder="Your name" id="ctName">
+      <input type="email" placeholder="Email address" id="ctEmail">
+      <input type="tel" placeholder="Phone number" id="ctPhone">
+      <select id="ctGoal">
+        <option>What are you looking to achieve?</option>
+        <option>Get stronger</option>
+        <option>Lose weight</option>
+        <option>Rehab / injury recovery</option>
+        <option>Sport performance</option>
+        <option>General fitness</option>
+      </select>
+      <button class="btn btn-dark" id="ctSubmit">Request consult <span class="arr">&rarr;</span></button>
+    </div>
+    <div class="ct-ok" id="ctOk">
+      <h3 style="margin-bottom:8px">Request received!</h3>
+      <p>We&rsquo;ll be in touch within 24 hours to schedule your consult.</p>
     </div>
   </div>
 </div>
@@ -1691,6 +1734,42 @@ document.getElementById('rmSubmit').addEventListener('click',()=>{
   rmForm.style.display='none';
   rmOk.classList.add('show');
   setTimeout(()=>{rmOverlay.classList.remove('open');document.body.style.overflow=''},2000);
+});
+
+// consult modal
+const ctOverlay=document.getElementById('ctOverlay');
+const ctForm=document.getElementById('ctForm');
+const ctOk=document.getElementById('ctOk');
+const ctName=document.getElementById('ctName');
+const ctEmail=document.getElementById('ctEmail');
+
+document.querySelectorAll('.open-consult').forEach(link=>{
+  link.addEventListener('click',e=>{
+    e.preventDefault();
+    ctName.value=getSavedName();
+    ctEmail.value=getSavedEmail();
+    ctForm.style.display='';
+    ctOk.classList.remove('show');
+    ctOverlay.classList.add('open');
+    document.body.style.overflow='hidden';
+  });
+});
+
+ctOverlay.addEventListener('click',e=>{
+  if(e.target===ctOverlay){ctOverlay.classList.remove('open');document.body.style.overflow=''}
+});
+document.getElementById('ctClose').addEventListener('click',()=>{
+  ctOverlay.classList.remove('open');document.body.style.overflow='';
+});
+
+document.getElementById('ctSubmit').addEventListener('click',()=>{
+  const name=ctName.value.trim();
+  const email=ctEmail.value.trim();
+  if(!name||!email)return;
+  saveUser(name,email);
+  ctForm.style.display='none';
+  ctOk.classList.add('show');
+  setTimeout(()=>{ctOverlay.classList.remove('open');document.body.style.overflow=''},3000);
 });
 
 // timetable day tabs
