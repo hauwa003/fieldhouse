@@ -1429,11 +1429,32 @@ document.querySelectorAll('input[type="email"]').forEach(el=>{
 });
 
 // lenis smooth scroll
+let lenis;
 function initLenis(){
   if(typeof Lenis==='undefined')return;
-  const lenis=new Lenis({duration:1.2,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t))});
+  lenis=new Lenis({duration:1.2,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t))});
   function raf(time){lenis.raf(time);requestAnimationFrame(raf)}
   requestAnimationFrame(raf);
+  // smooth scroll for all anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const id=a.getAttribute('href');
+      if(id==='#'||id.length<2)return;
+      let target;
+      try{target=document.querySelector(id)}catch(_){return}
+      if(target){
+        e.preventDefault();
+        // close mobile menu if open so body overflow is unlocked
+        const hdr=document.querySelector('header');
+        if(hdr&&hdr.classList.contains('nav-open')){
+          hdr.classList.remove('nav-open');
+          document.querySelector('.nav-toggle')?.setAttribute('aria-expanded','false');
+          document.body.style.overflow='';
+        }
+        lenis.scrollTo(target,{offset:0,duration:1.2});
+      }
+    });
+  });
 }
 if(typeof Lenis!=='undefined')initLenis();
 else window.addEventListener('DOMContentLoaded',initLenis);
